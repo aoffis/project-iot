@@ -8,7 +8,6 @@ import {
   Button,
   CardHeader,
 } from "@mui/material";
-import Node2 from "../node/node2";
 import { Link } from "react-router-dom";
 function FeaturedInfo(props) {
   if (props.data) {

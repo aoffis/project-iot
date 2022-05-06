@@ -9,8 +9,6 @@ import {
   Typography,
   FormHelperText,
 } from "@mui/material";
-import GoogleIcon from "@mui/icons-material/Google";
-import { GoogleAuthProvider } from "firebase/auth";
 
 const SignUp = () => {
   const [error, setError] = useState("");
@@ -19,7 +17,6 @@ const SignUp = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
-  const provider = new GoogleAuthProvider();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -35,21 +32,6 @@ const SignUp = () => {
     } catch (error) {
       setError(error.message);
     }
-  };
-
-  const googleLogin = (e) => {
-    try {
-      firebaseConfig
-        .auth()
-        .signInWithPopup(provider)
-        .catch((error) => {
-          console.table(error);
-        });
-      navigate("/");
-    } catch (error) {
-      alert(error.message);
-    }
-    //console.log(auth);
   };
 
   return (
@@ -120,16 +102,6 @@ const SignUp = () => {
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
-            </Button>
-            <Button
-              startIcon={<GoogleIcon fontSize="medium" />}
-              onClick={googleLogin}
-              fullWidth
-              variant="outlined"
-            >
-              <Typography variant="button" component="h2">
-                Sign in with google
-              </Typography>
             </Button>
           </Box>
         </Box>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useState, useContext } from "react";
 import firebaseConfig from "../config";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Auth";
 import {
   Container,
@@ -11,6 +11,8 @@ import {
   Typography,
   FormHelperText,
 } from "@mui/material";
+import { GoogleAuthProvider } from "firebase/auth";
+import GoogleIcon from "@mui/icons-material/Google";
 
 function Login() {
   const [passwordText, setPasswordText] = useState();
@@ -18,6 +20,8 @@ function Login() {
   const [error, setError] = useState("");
   const emailRef = useRef();
   const passwordRef = useRef();
+  const navigate = useNavigate();
+  const provider = new GoogleAuthProvider();
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -33,6 +37,20 @@ function Login() {
     } catch (error) {
       setError(error.message);
     }
+  };
+  const googleLogin = (e) => {
+    try {
+      firebaseConfig
+        .auth()
+        .signInWithPopup(provider)
+        .catch((error) => {
+          console.table(error);
+        });
+      navigate("/");
+    } catch (error) {
+      alert(error.message);
+    }
+    //console.log(auth);
   };
   const { currentUser } = useContext(AuthContext);
   if (currentUser) {
@@ -108,6 +126,16 @@ function Login() {
               Login
             </Button>
           </Box>
+          <Button
+            startIcon={<GoogleIcon fontSize="medium" />}
+            onClick={googleLogin}
+            fullWidth
+            variant="outlined"
+          >
+            <Typography variant="button" component="h2">
+              Sign in with google
+            </Typography>
+          </Button>
         </Box>
       </Container>
     </>

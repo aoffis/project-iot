@@ -21,11 +21,11 @@ function Sidebar() {
           flex: 1,
           bgcolor: "",
           padding: "2vh",
-          height: "91vh",
+          height: "92vh",
           boxShadow: 3,
           zIndex: 2,
           position: "sticky",
-          top: "5vh",
+          top: "56px",
         }}
       >
         <Box className="Wrapper">

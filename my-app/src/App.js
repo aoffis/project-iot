@@ -6,8 +6,6 @@ import SignUp from "./components/SignUp";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import { AuthProvider } from "./components/Auth";
-import Dataread from "./components/DataRead";
-import Test from "./components/test/Test";
 import Node1 from "./components/node/node1";
 import Node2 from "./components/node/node2";
 
@@ -24,7 +22,6 @@ function App() {
               <Route path="node1" element={<Node1 />} />
               <Route path="node2" element={<Node2 />} />
             </Route>
-            <Route path="/data" element={<Dataread />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

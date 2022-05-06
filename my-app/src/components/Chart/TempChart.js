@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Card, CardHeader } from "@mui/material";
-import { blue, red, purple } from "@mui/material/colors";
+import { blue } from "@mui/material/colors";
 import firebaseConfig from "../../config";
 
 import {

@@ -19,7 +19,7 @@ function Topbar(props) {
         position="static"
         sx={{
           bgcolor: "",
-          height: "5vh",
+          height: "59px",
           zIndex: 2,
           position: "sticky",
           top: 0,
@@ -35,7 +35,7 @@ function Topbar(props) {
               textTransform: "uppercase",
             }}
           >
-            Internet of Things
+            Automatic Watering System
           </Typography>
           <Tooltip title={props.currentUser.email}>
             <IconButton

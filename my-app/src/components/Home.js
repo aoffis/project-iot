@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
 import { Box, AppBar, Toolbar, Button, Typography } from "@mui/material";
 import { AuthContext } from "./Auth";
-import { GoogleAuthProvider } from "firebase/auth";
-import firebaseConfig from "../config";
 import { Link, Navigate } from "react-router-dom";
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
-  const provider = new GoogleAuthProvider();
 
   // const googleLogin = (e) => {
   //   firebaseConfig
@@ -29,9 +26,10 @@ const Home = () => {
             position="static"
             sx={{
               bgcolor: "white",
-              paddingLeft: "10vw",
-              paddingRight: "10vw",
-              height: "5vh",
+              paddingLeft: "6vw",
+              paddingRight: "6vw",
+              // height: "5vh",
+              height: "59px",
             }}
           >
             <Toolbar>
@@ -40,7 +38,7 @@ const Home = () => {
                 component="div"
                 sx={{ flexGrow: 1, color: "black" }}
               >
-                IOT
+                Automatic Watering System
               </Typography>
               <Button
                 sx={{ margin: "1vw", width: "115px" }}
