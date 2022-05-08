@@ -13,10 +13,10 @@ function FeaturedPump(props) {
   if (props.data) {
     var pump = props.data[0].pump;
     var status;
-    if (pump === "off") {
-      status = "ปิด";
-    } else {
+    if (pump === "on") {
       status = "เปิด";
+    } else {
+      status = "ปิด";
     }
   }
 
@@ -40,7 +40,7 @@ function FeaturedPump(props) {
               component="div"
               style={{ marginTop: "3vh" }}
             >
-              {pump}
+              {pump ? { pump } : "off"}
             </Typography>
             <Typography color="text.secondary">{status}</Typography>
           </CardContent>
