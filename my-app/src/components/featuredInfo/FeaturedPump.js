@@ -40,7 +40,7 @@ function FeaturedPump(props) {
               component="div"
               style={{ marginTop: "3vh" }}
             >
-              {pump ? { pump } : "off"}
+              {pump ? pump : "off"}
             </Typography>
             <Typography color="text.secondary">{status}</Typography>
           </CardContent>
